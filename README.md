@@ -1,4 +1,6 @@
-GLAB 320H.7.1 - React Movie Search
+## GLAB 320H.7.1 - React Movie Search
+`July 22, 2026`
+`Samuel Jacquet`
 
 
 Within this lab activity, we will make use of the useEffect hook, practice lifting state that is shared by components, and briefly explore making AJAX/Fetch API requests within a React application. We'll talk more about third-party APIs data fetching in a future lesson.
@@ -357,4 +359,25 @@ If you have time, take 10 minutes to try to change the useEffect we created so t
 
 5. Pas `getMovie` to `Form` thru props
 
-6. In `Form`, create controlled input state and submit handler
+6. In `Form`, create input state and submit handler
+
+7. In `Form` call `props.moviesearch(formData.searchterm)` on submit
+
+8. Pass `movie` state for `App` to `MovieDsiplay`
+
+9. In `MovieDisplay`, render info when movie exist 
+
+10. Use `useEffect` in `App` to load inception on 1st render
+
+11. Store Api Key in `.env` using `VITE_OMDB_API_KEY`
+
+12. Push `.env_example`, not `.env`
+
+
+## Why State?
+`Form` needs to trigger the search 
+`MovieDsiplay` needs to show the result 
+They are sibling components
+State Must live in their parent, `App`.
+Lift the state up is the term !!!!!!
+

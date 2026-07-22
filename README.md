@@ -342,3 +342,19 @@ const getMovie = async(searchTerm) => {
 
 Bonus Exercise
 If you have time, take 10 minutes to try to change the useEffect we created so that it grabs a random movie on each page refresh, rather than always starting with "Clueless."
+
+
+## Steps for the React Movie Search lab 
+
+
+1. Create a React app with Vite 
+
+2. Create `Form.jsx` and `MovieDsiplay.jsx` inside `src/components`
+
+3. In `App.jsx`, create movie state with  `useState`
+
+4. In `App.jsx`, create `getMovie(searchTerm)` to fetch from OMDB
+
+5. Pas `getMovie` to `Form` thru props
+
+6. In `Form`, create controlled input state and submit handler

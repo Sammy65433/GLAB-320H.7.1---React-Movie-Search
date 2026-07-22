@@ -27,8 +27,9 @@ export default function Form (props) {
           name="searchterm"
           onChange={handleChange}
           value={formData.searchterm}
+          placeholder="Search Movie"
         />
-        <input type="submit" value="submit" />
+        <input type="submit" value="Search" />
       </form>
     </div>
   );

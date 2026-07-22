@@ -17,6 +17,7 @@ export default function App() {
 
   // Function to get movies
   const getMovie = async(searchTerm) => {
+    try{
     // Make fetch request and store the response
     const response = await fetch(
       `http://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`
@@ -27,13 +28,22 @@ export default function App() {
     const data = await response.json();
     // Set the Movie state to the received data
     setMovie(data);
-  };
+  } catch (error) {
+
+    console.error(error);
+  }
+};
+
+useEffect(() => {
+
+  getMovie('Inception');
+}, []);
 
   // We pass the getMovie function as a prop called moviesearch
   return (
     <div className="App">
       <Form moviesearch={getMovie} />
-      <MovieDisplay />
+      <MovieDisplay movie={movie}/>
     </div>
   );
 }

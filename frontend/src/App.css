@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #eaeaf2;
+  background: #090b15;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(121, 75, 209, 0.18), transparent 32%),
+    radial-gradient(circle at 5% 55%, rgba(37, 88, 150, 0.13), transparent 35%),
+    #090b15;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #d2b2ff;
+  outline-offset: 3px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(1100px, calc(100% - 40px));
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #a86cff, #6944e8);
+  font-size: 0.85rem;
+}
+
+.header-note {
+  color: #a9aabe;
+  font-size: 0.9rem;
+}
+
+.hero-section {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 86px 0 54px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 15px;
+  color: #bda0ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: "Outfit", sans-serif;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+
+h1 span {
+  color: #b48aff;
+}
+
+.hero-description {
+  max-width: 540px;
+  margin: 0 auto 38px;
+  color: #a9aabe;
+  line-height: 1.7;
+}
+
+.search-form {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.search-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #d8d8e5;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.search-controls {
+  display: flex;
+  gap: 10px;
+  padding: 7px;
+  border: 1px solid #353449;
+  border-radius: 16px;
+  background: #191b2a;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+}
+
+.search-controls input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 0;
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.search-controls input::placeholder {
+  color: #85869d;
+}
+
+.search-controls button {
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 10px;
+  background: #a66cff;
+  color: #151022;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.search-controls button:hover:not(:disabled) {
+  background: #c195ff;
+  transform: translateY(-1px);
+}
+
+.search-controls button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.results-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 70px;
+}
+
+.movie-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 290px) 1fr;
+  gap: clamp(24px, 5vw, 55px);
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid #313247;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #1b1d2d, #121420);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.28);
+}
+
+.poster-wrap {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #292b3c;
+}
+
+.movie-poster,
+.poster-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-poster {
+  display: block;
+  object-fit: cover;
+}
+
+.poster-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  color: #a9aabe;
+  text-align: center;
+}
+
+.movie-details {
+  align-self: center;
+}
+
+.movie-details h2 {
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.movie-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.movie-tags span {
+  padding: 7px 11px;
+  border: 1px solid #414258;
+  border-radius: 999px;
+  color: #c5c5d4;
+  font-size: 0.8rem;
+}
+
+.movie-genre {
+  margin-bottom: 14px;
+  color: #c2a2ff;
+  font-weight: 700;
+}
+
+.movie-plot {
+  margin-bottom: 25px;
+  color: #bbbdce;
+  line-height: 1.75;
+}
+
+.movie-facts {
+  display: grid;
+  gap: 15px;
+  margin: 0;
+  padding-top: 22px;
+  border-top: 1px solid #36374b;
+}
+
+.movie-facts div {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  gap: 12px;
+}
+
+.movie-facts dt {
+  color: #898ba3;
+}
+
+.movie-facts dd {
+  margin: 0;
+  color: #eeeef5;
+}
+
+.status-card {
+  padding: 38px 20px;
+  border: 1px solid #313247;
+  border-radius: 18px;
+  background: #191b2a;
+  color: #bcbdd0;
+  text-align: center;
+}
+
+.status-card--error {
+  border-color: rgba(255, 121, 137, 0.4);
+  color: #ffafb9;
+}
+
+.app-footer {
+  margin-top: auto;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #898ba3;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .app-shell {
+    width: min(100% - 28px, 1100px);
+  }
+
+  .header-note {
+    display: none;
+  }
+
+  .hero-section {
+    padding: 62px 0 38px;
+  }
+
+  .search-controls {
+    flex-direction: column;
+  }
+
+  .search-controls button {
+    width: 100%;
+  }
+
+  .movie-card {
+    grid-template-columns: 1fr;
+  }
+
+  .poster-wrap {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .movie-facts div {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
